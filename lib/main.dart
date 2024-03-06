@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'SQLITE',
         theme: ThemeData(
-          primarySwatch: Colors.orange,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
+          useMaterial3: true,
         ),
         home: const HomePage());
   }
@@ -145,7 +146,30 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SQL'),
+        title: const Text('Challenges'),
+        titleSpacing: 00.0,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.energy_savings_leaf),
+            tooltip: 'Comment Icon',
+            onPressed: () {},
+          ), //IconButton
+        ],
+        centerTitle: true,
+        toolbarHeight: 60.2,
+        toolbarOpacity: 0.8,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(25),
+              bottomLeft: Radius.circular(25)),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          tooltip: 'Menu Icon',
+          onPressed: () {},
+        ),
+        elevation: 0.00,
+        backgroundColor: Colors.greenAccent[400],
       ),
       body: _isLoading
           ? const Center(
@@ -154,27 +178,33 @@ class _HomePageState extends State<HomePage> {
           : ListView.builder(
         itemCount: _journals.length,
         itemBuilder: (context, index) => Card(
-          color: Colors.orange[200],
+          color: Colors.green[200],
           margin: const EdgeInsets.all(15),
-          child: ListTile(
-              title: Text(_journals[index]['title']),
-              subtitle: Text(_journals[index]['description']),
-              trailing: SizedBox(
-                width: 100,
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.edit),
-                      onPressed: () => _showForm(_journals[index]['id']),
+          child: Column(
+            children: [
+              const Text('created at :'),
+              Text(_journals[index]['createdAt']),
+              ListTile(
+                  title: Text(_journals[index]['title']),
+                  subtitle: Text(_journals[index]['description']),
+                  trailing: SizedBox(
+                    width: 100,
+                    child: Row(
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.edit),
+                          onPressed: () => _showForm(_journals[index]['id']),
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.delete),
+                          onPressed: () =>
+                              _deleteItem(_journals[index]['id']),
+                        ),
+                      ],
                     ),
-                    IconButton(
-                      icon: const Icon(Icons.delete),
-                      onPressed: () =>
-                          _deleteItem(_journals[index]['id']),
-                    ),
-                  ],
-                ),
-              )),
+                  )),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
