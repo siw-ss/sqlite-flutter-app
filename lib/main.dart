@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sqlite_app/helpers/sql_helper.dart';
+import './components/NavBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -145,6 +146,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const NavBar(),
       appBar: AppBar(
         title: const Text('Challenges'),
         titleSpacing: 00.0,
@@ -162,11 +164,6 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(25),
               bottomLeft: Radius.circular(25)),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          tooltip: 'Menu Icon',
-          onPressed: () {},
         ),
         elevation: 0.00,
         backgroundColor: Colors.greenAccent[400],
