@@ -10,6 +10,16 @@ class SQLHelper {
         createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
       )
       """);
+    await database.execute("""CREATE TABLE users(
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        firstName TEXT,
+        lastName TEXT,
+        image TEXT,
+        businessLine TEXT,
+        department TEXT,
+        createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+      )
+    """);
   }
 // id: the id of a item
 // title, description: name and description of your activity

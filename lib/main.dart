@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sqlite_app/pages/homepage.dart';
-
+import 'package:get/get.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       // Remove the debug banner
         debugShowCheckedModeBanner: false,
         title: 'SQLITE',
