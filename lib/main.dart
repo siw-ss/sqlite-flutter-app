@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sqlite_app/pages/homepage.dart';
+import 'package:flutter_sqlite_app/pages/onboardingpage.dart';
 import 'package:get/get.dart';
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,11 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
           useMaterial3: true,
         ),
-        home: const HomePage());
+        getPages: [
+          GetPage(name: '/', page: ()=>OnBoardingPage(),),
+          GetPage(name: '/home', page: ()=>HomePage(),),
+        ],
+        home: OnBoardingPage(),
+    );
   }
 }
