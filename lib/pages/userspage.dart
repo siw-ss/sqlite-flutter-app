@@ -150,6 +150,13 @@ class _UsersPageState extends State<UsersPage> {
     _refreshJournals();
   }
 
+  String receiveImage(String img) {
+    if (img.startsWith("http")) {
+      return img;
+    }
+    return "https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,6 +176,16 @@ class _UsersPageState extends State<UsersPage> {
               ListTile(
                   title: Text(_journals[index]['firstName'] as String),
                   subtitle: Text(_journals[index]['lastName'] as String),
+                  leading: 
+                  CircleAvatar(
+                            child: ClipOval(
+                            child: Image.network(
+                              receiveImage(_journals[index]['image']as String),
+                            width: 90,
+                            height: 90,
+                            fit: BoxFit.cover,
+                          ),
+                        )),
                   trailing: SizedBox(
                     width: 100,
                     child: Row(

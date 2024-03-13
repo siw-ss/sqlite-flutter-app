@@ -1,6 +1,14 @@
 # flutter_sqlite_app
 
-A new Flutter project.
+A new Flutter project implementing sqlite.
+
+## Content of this repo
+
+- Creating and using multiple tables in sqlite with sqflite
+- Getx routing
+- Introduction screen (scrollable onboarding pages)
+- UI sidebar for a logged in user
+- Navigation with a button in the Topbar
 
 ## Getting Started
 

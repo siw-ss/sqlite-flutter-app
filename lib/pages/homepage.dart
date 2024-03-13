@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         titleSpacing: 00.0,
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.energy_savings_leaf),
+            icon: Icon(_currentIndex==0 ? Icons.energy_savings_leaf : Icons.people),
             tooltip: 'Comment Icon',
             onPressed: () {
               setState(() {
