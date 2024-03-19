@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sqlite_app/components/BottomNavBar.dart';
 import 'package:flutter_sqlite_app/pages/homepage.dart';
 import 'package:flutter_sqlite_app/pages/onboardingpage.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/', page: ()=>OnBoardingPage(),),
           GetPage(name: '/home', page: ()=>HomePage(),),
         ],
-        home: OnBoardingPage(),
+        home: BottomNavBar(),
     );
   }
 }

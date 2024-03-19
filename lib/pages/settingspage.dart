@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sqlite_app/components/SideBar.dart';
-import 'package:flutter_sqlite_app/pages/settingspage.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
 
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       drawer: const SideBar(),
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text("Settings"),
         titleSpacing: 00.0,
         centerTitle: true,
         toolbarHeight: 60.2,

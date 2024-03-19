@@ -163,6 +163,7 @@ class _ChallengesPageState extends State<ChallengesPage> {
         child: const Icon(Icons.add),
         onPressed: () => _showForm(null),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
     );
   }
 }

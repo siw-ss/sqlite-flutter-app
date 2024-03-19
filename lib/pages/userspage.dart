@@ -210,6 +210,7 @@ class _UsersPageState extends State<UsersPage> {
         child: const Icon(Icons.add),
         onPressed: () => _showForm(null),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
     );
   }
 }
