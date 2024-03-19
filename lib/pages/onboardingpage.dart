@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_sqlite_app/pages/homepage.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -11,13 +12,34 @@ class OnBoardingPage extends StatefulWidget {
   State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
+
+  void initialization() async {
+    // This is where you can initialize the resources needed by your app while
+    // the splash screen is displayed.  Remove the following example because
+    // delaying the user experience is a bad design practice!
+    // ignore_for_file: avoid_print
+    print('ready in 3...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('ready in 2...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('ready in 1...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('go!');
+    FlutterNativeSplash.remove();
+  }
+
 class _OnBoardingPageState extends State<OnBoardingPage> {
+  @override
+  void initState() {
+    super.initState();
+    initialization();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: IntroductionScreen(
       globalBackgroundColor: Colors.white,
-      scrollPhysics: BouncingScrollPhysics(),
+      scrollPhysics: const BouncingScrollPhysics(),
       pages: [
         PageViewModel(
           titleWidget: const Text(

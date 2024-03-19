@@ -38,6 +38,15 @@ dependencies:
   cupertino_icons: ^1.0.2
   sqflite: ^2.3.2
   introduction_screen: ^3.1.12
+  flutter_native_splash: ^2.3.11
+
+flutter_native_splash:
+  android: true
+  ios: false
+  web: true
+
+  color: "#8BC34A"
+  image: "images/run1.jpg"
 
 dev_dependencies:
   flutter_test:
